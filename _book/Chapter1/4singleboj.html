@@ -1,0 +1,570 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.3. 单类别多目标(例) · NMS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Guangyao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5doubleobj.html" />
+    
+    
+    <link rel="prev" href="3Alg.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1. NMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="2IoU.html">
+            
+                <a href="2IoU.html">
+            
+                    
+                    1.1. IoU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="3Alg.html">
+            
+                <a href="3Alg.html">
+            
+                    
+                    1.2. 算法流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="4singleboj.html">
+            
+                <a href="4singleboj.html">
+            
+                    
+                    1.3. 单类别多目标(例)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="5doubleobj.html">
+            
+                <a href="5doubleobj.html">
+            
+                    
+                    1.4. 多类别(例)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="6cyroadj.html">
+            
+                <a href="6cyroadj.html">
+            
+                    
+                    1.5. 常用流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="7adv.html">
+            
+                <a href="7adv.html">
+            
+                    
+                    1.6.优缺点分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="8ref.html">
+            
+                <a href="8ref.html">
+            
+                    
+                    1.7. 参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    2. Soft-NMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1alg2.html">
+            
+                <a href="../Chapter2/1alg2.html">
+            
+                    
+                    2.1. 算法流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2code2.html">
+            
+                <a href="../Chapter2/2code2.html">
+            
+                    
+                    2.2. 代码实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/3qua.html">
+            
+                <a href="../Chapter2/3qua.html">
+            
+                    
+                    2.3. 性能分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter2/4adv2.html">
+            
+                <a href="../Chapter2/4adv2.html">
+            
+                    
+                    2.4. 优缺点分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Chapter2/5ref2.html">
+            
+                <a href="../Chapter2/5ref2.html">
+            
+                    
+                    2.5. 参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    3. Softer-NMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/1idea3.html">
+            
+                <a href="../Chapter3/1idea3.html">
+            
+                    
+                    3.1. 算法思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/2su3.html">
+            
+                <a href="../Chapter3/2su3.html">
+            
+                    
+                    3.2. 网络结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/3argroad3.html">
+            
+                <a href="../Chapter3/3argroad3.html">
+            
+                    
+                    3.3. 算法流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Chapter3/4code3.html">
+            
+                <a href="../Chapter3/4code3.html">
+            
+                    
+                    3.4. 代码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Chapter3/5qua3.html">
+            
+                <a href="../Chapter3/5qua3.html">
+            
+                    
+                    3.5. 性能分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../Chapter3/6adv.html">
+            
+                <a href="../Chapter3/6adv.html">
+            
+                    
+                    3.6. 优缺点分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../Chapter3/7ref3.html">
+            
+                <a href="../Chapter3/7ref3.html">
+            
+                    
+                    3.7. 参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.3. 单类别多目标(例)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="14-&#x5355;&#x7C7B;&#x522B;&#x591A;&#x76EE;&#x6807;&#x4F8B;">1.4. &#x5355;&#x7C7B;&#x522B;&#x591A;&#x76EE;&#x6807;(&#x4F8B;)</h1>
+<p>&#x4F8B;&#xFF1A;&#x6709;2&#x53EA;&#x72D7;&#xFF0C;&#x600E;&#x6837;&#x7528; NMS &#x4FDD;&#x8BC1;&#x53EA;&#x7559;&#x4E0B;&#x4E24;&#x4E2A; BBox&#xFF1F;</p>
+<p>&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6BCF;&#x4E2A;BBox&#x4F1A;&#x5E26;&#x6709;&#x7684;5&#x4E2A;&#x503C;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7684;&#x91CD;&#x70B9;&#x662F;&#x600E;&#x4E48;&#x68C0;&#x6D4B;&#x51FA;&#x72D7;&#x8FD9;&#x4E2A;&#x76EE;&#x6807;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F1A;&#x7528;&#x5230;5&#x4E2A;&#x4FE1;&#x606F;&#x3002;&#x5176;&#x4E2D;BBox&#x4E2D;&#x5FC3;&#x4F4D;&#x7F6E; (x,y)&#x548C;BBox&#x957F;&#x5BBD; (h,w)&#x662F;&#x8BA1;&#x7B97;IOU&#x503C;&#x7684;&#x3002;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="assets/1_FzPoBiqN_PLrZsXh4wPhAw.png" alt="img"></p>
+<p>&#x5047;&#x8BBE;&#x4E0A;&#x56FE;&#x4E2D;&#x6211;&#x4EEC;&#x6349;&#x5230;5&#x4E2A;BBox&#xFF0C;&#x6BCF;&#x4E2A;BBox&#x5E26;&#x6709;&#x4E00;&#x4E2A;score&#xFF0C;&#x5373;&#x4EE3;&#x8868;&#x5B83;&#x662F;foreground&#x7684;&#x7F6E;&#x4FE1;&#x5EA6;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;1&#x6B65;&#xFF1A;&#x5BF9; BBox &#x6309;&#x7F6E;&#x4FE1;&#x5EA6;&#x6392;&#x5E8F;&#xFF0C;&#x9009;&#x53D6;&#x7F6E;&#x4FE1;&#x5EA6;&#x6700;&#x9AD8;&#x7684; BBox&#xFF0C;&#x653E;&#x8FDB;&#x96C6;&#x5408;D&#xFF08;&#x6240;&#x4EE5;&#x4E00;&#x5F00;&#x59CB;&#x7F6E;&#x4FE1;&#x5EA6;&#x6700;&#x9AD8;&#x7684; BBox &#x4E00;&#x5B9A;&#x4F1A;&#x88AB;&#x7559;&#x4E0B;&#x6765;&#xFF09;&#xFF1B;</li>
+<li>&#x7B2C;2&#x6B65;&#xFF1A;&#x5BF9;&#x5269;&#x4E0B;&#x7684; BBox &#x548C;&#x5DF2;&#x7ECF;&#x9009;&#x53D6;&#x7684; BBox &#x8BA1;&#x7B97; IoU&#xFF0C;&#x6DD8;&#x6C70;&#xFF08;&#x6291;&#x5236;&#xFF09; IoU &#x5927;&#x4E8E;&#x8BBE;&#x5B9A;&#x9608;&#x503C;&#x7684; BBox&#xFF08;&#x5728;&#x56FE;&#x4F8B;&#x4E2D;&#x8FD9;&#x4E9B;&#x6DD8;&#x6C70;&#x7684; BBox &#x7684;&#x7F6E;&#x4FE1;&#x5EA6;&#x88AB;&#x8BBE;&#x5B9A;&#x4E3A;0&#xFF09;&#xFF1B;</li>
+<li>&#x7B2C;3&#x6B65;&#xFF1A;&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x7684; BBox &#x90FD;&#x88AB;&#x5904;&#x7406;&#x5B8C;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6BCF;&#x4E00;&#x8F6E;&#x9009;&#x53D6;&#x7684; BBox &#xFF08;&#x96C6;&#x5408;D&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF09;&#x5C31;&#x662F;&#x6700;&#x540E;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<p>&#x7B97;&#x6CD5;&#x6D41;&#x7A0B;&#x56FE;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="assets/2019030914555592.png" alt="img"></p>
+<p>&#x5047;&#x8BBE;&#x9608;&#x503C;&#x4E3A;0.5&#xFF0C;&#x5173;&#x4E8E;&#x6D41;&#x7A0B;&#x56FE;&#x4F8B;&#x7684;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>D =  {&#x7A7A;&#x96C6;&#x5408;}  //&#x8FD9;&#x91CC;&#x7684;D&#x4EE3;&#x8868;&#x786E;&#x5B9A;&#x662F;&#x7269;&#x4F53;&#x7684;&#x96C6;&#x5408; &#x3002;</li>
+<li>Run 1&#xFF1A;&#x5148;&#x5C06;BBox&#x6309;&#x7167;&#x7F6E;&#x4FE1;&#x5EA6;&#x6392;&#x5E8F;&#xFF0C;&#x5F97;&#x51FA;&#x7F6E;&#x4FE1;&#x5EA6;&#x6700;&#x9AD8;&#x7684;BBox(&#x7EA2;&#x8272;)&#x4F1A;&#x88AB;&#x9001;&#x5165;&#x96C6;&#x5408;D&#x5185;&#xFF0C;&#x5176;&#x4ED6;&#x7684;BBox&#x4F1A;&#x4E0E;&#x6B64;&#x5904;&#x4EA7;&#x751F;&#x7684;&#x6700;&#x9AD8;&#x7684;BBox&#x8FDB;&#x884C;IoU&#x8BA1;&#x7B97;&#xFF0C;&#x6B64;&#x65F6; D={&#x7EA2;&#x8272;BBox}&#x3002;&#x5BF9;&#x4E8E;&#x5927;&#x4E8E;0.5&#x7684;BBox&#x5C06;&#x5176;&#x7F6E;&#x4FE1;&#x5EA6;&#x8BBE;&#x4E3A;0&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x7C89;&#x8272;BBox&#x7684;IoU&#x4E3A;0.6&gt;0.5&#xFF0C;&#x6545;&#x5C06;&#x7C89;&#x8272;&#x7684;BBox&#x7684;&#x7F6E;&#x4FE1;&#x5EA6;&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;</li>
+<li>Run 2&#xFF1A;&#x8FD9;&#x91CC;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x7F6E;&#x4FE1;&#x5EA6;&#x4E3A;0&#x548C;&#x5DF2;&#x7ECF;&#x5728;&#x96C6;&#x5408;D&#x4E2D;&#x7684;BBox&#xFF0C;&#x5BF9;&#x4E8E;&#x5269;&#x4E0B;&#x7684;BBox&#x6309;&#x7167;&#x7F6E;&#x4FE1;&#x5EA6;&#x6392;&#x5E8F;&#x9009;&#x51FA;&#x6700;&#x5927;&#x7684;BBox(&#x9EC4;&#x8272;)&#xFF0C;&#x6B64;&#x65F6;D={&#x7EA2;&#x8272;BBox&#xFF0C;&#x9EC4;&#x8272;BBox}&#xFF0C;&#x5269;&#x4E0B;&#x7684;BBox&#x4E0E;Run 2&#x4E2D;&#x9009;&#x51FA;&#x7684;&#x6700;&#x5927;&#x7F6E;&#x4FE1;&#x5EA6;&#x7684;BBox&#x8BA1;&#x7B97;IoU&#xFF0C;&#x8FD9;&#x91CC;&#x8BA1;&#x7B97;&#x4E4B;&#x540E;&#x7684;IoU&#x5747;&#x5927;&#x4E8E;0.5&#xFF0C;&#x6545;&#x5269;&#x4E0B;&#x7684;BBox&#x7684;&#x7F6E;&#x4FE1;&#x5EA6;&#x90FD;&#x8BBE;&#x7F6E;&#x4E3A;0&#x3002;</li>
+<li>&#x6B64;&#x65F6;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;BBox&#x7684;&#x7F6E;&#x4FE1;&#x5EA6;&#x5927;&#x4E8E;0&#xFF0C;&#x6240;&#x4EE5;&#x7ED3;&#x675F;NMS&#x3002;&#x6700;&#x7EC8;&#x7684; D={&#x7EA2;&#x8272;BBox&#xFF0C;&#x9EC4;&#x8272;BBox}&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48; IoU &#x9608;&#x503C;&#x662F;0.5&#xFF0C;&#x80FD;&#x4E0D;&#x80FD;&#x518D;&#x9AD8;&#x4E00;&#x70B9;&#xFF1F;</p>
+<p>&#x5018;&#x82E5;&#x6211;&#x4EEC;&#x5C06;IoU&#x9608;&#x503C;&#x63D0;&#x9AD8;&#x4E3A;0.7&#xFF0C;&#x7ED3;&#x679C;&#x53C8;&#x662F;&#x5982;&#x4F55;&#xFF1F;</p>
+<p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x56FE;&#x4F8B;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<p><img src="assets/20190309151344696.png" alt="img"></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;NMS &#x7528;&#x4E86;&#x66F4;&#x591A;&#x8F6E;&#x6B21;&#x6765;&#x786E;&#x5B9A;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x4E14;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x4FDD;&#x7559;&#x4E86;&#x66F4;&#x591A;&#x7684; BBox&#xFF0C;&#x5373;&#x91CD;&#x590D;&#x68C0;&#x6D4B;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x7ED3;&#x679C;&#x5E76;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x4F7F;&#x7528; NMS &#x65F6;&#xFF0C;IoU &#x9608;&#x503C;&#x7684;&#x786E;&#x5B9A;&#x662F;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x4F46;&#x4E00;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x5B9A; default &#x503C;&#xFF08;&#x8BBA;&#x6587;&#x4F7F;&#x7528;&#x7684;&#x503C;&#xFF09;&#x8FDB;&#x884C;&#x5C1D;&#x8BD5;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3Alg.html" class="navigation navigation-prev " aria-label="Previous page: 1.2. 算法流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5doubleobj.html" class="navigation navigation-next " aria-label="Next page: 1.4. 多类别(例)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3. 单类别多目标(例)","level":"1.2.3","depth":2,"next":{"title":"1.4. 多类别(例)","level":"1.2.4","depth":2,"path":"Chapter1/5doubleobj.md","ref":"Chapter1/5doubleobj.md","articles":[]},"previous":{"title":"1.2. 算法流程","level":"1.2.2","depth":2,"path":"Chapter1/3Alg.md","ref":"Chapter1/3Alg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","copy-code-button","mermaid","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/ayameyao"},"search":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Guangyao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NMS","gitbook":"*"},"file":{"path":"Chapter1/4singleboj.md","mtime":"2019-05-16T03:36:40.846Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-16T15:12:59.089Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
