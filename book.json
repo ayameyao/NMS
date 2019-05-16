@@ -1,0 +1,14 @@
+{
+    "title" : "NMS",
+    "author" : "Guangyao",
+    "plugins": ["katex",
+    	"copy-code-button",
+    	"mermaid",
+    	"github"
+    ],
+    "pluginsConfig": {
+    	"github": {
+    		"url": "https://github.com/ayameyao"
+    	}
+    }
+}
